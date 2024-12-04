@@ -42,6 +42,7 @@ services:
     networks:
       - microservices-net
 
+
   mongo-express:
     image: mongo-express
     container_name: mongo_express
@@ -68,8 +69,8 @@ services:
       - "22181:2181"
     networks:
       - microservices-net
-    volumes:
-      - zookeeper-data:/data/zookeeper  # Adding volume for Zookeeper
+#    volumes:
+#      - zookeeper-data:/data/zookeeper  # Adding volume for Zookeeper
 
   kafka:
     image: confluentinc/cp-kafka:latest
@@ -87,8 +88,8 @@ services:
       KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://localhost:9092
     networks:
       - microservices-net
-    volumes:
-      - kafka-data:/var/lib/kafka/data  # Adding volume for Kafka
+#    volumes:
+#      - kafka-data:/var/lib/kafka/data  # Adding volume for Kafka
 
   mail-dev:
     container_name: ms-mail-dev
@@ -125,7 +126,5 @@ volumes:
   pgadmin:
   mongo:
   mongo-express:
-  zookeeper-data:
-  kafka-data:
   maildev:
   keycloak-data:
