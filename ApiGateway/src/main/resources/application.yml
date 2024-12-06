@@ -13,5 +13,5 @@ server:
 jwt:
   auth:
     converter:
-      resource-id: soa-application
+      resource-id: soa-project-rest-api
       principle-attribute: preferred_username
