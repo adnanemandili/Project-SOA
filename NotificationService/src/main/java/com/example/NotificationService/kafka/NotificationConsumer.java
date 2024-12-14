@@ -38,7 +38,7 @@ public class NotificationConsumer {
                 paymentConfirmation.customerEmail(),
                 customerName,
                 paymentConfirmation.amount(),
-                paymentConfirmation.ticketReference()
+                paymentConfirmation.ticketId()
         );
     }
 }
