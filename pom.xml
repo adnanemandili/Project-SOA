@@ -17,6 +17,7 @@
         <module>DiscoveryServer</module>
         <module>ConfigurationService</module>
         <module>TicketService</module>
+        <module>GeolocationService</module>
     </modules>
 
     <properties>

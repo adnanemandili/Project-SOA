@@ -11,6 +11,7 @@
         <module name="NotificationService" />
         <module name="ConfigurationService" />
         <module name="TicketService" />
+        <module name="GeolocationService" />
         <module name="ApiGateway" />
       </profile>
     </annotationProcessing>
