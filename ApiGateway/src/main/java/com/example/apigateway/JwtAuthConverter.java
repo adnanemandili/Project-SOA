@@ -12,10 +12,7 @@ import org.springframework.security.oauth2.server.resource.authentication.JwtAut
 import org.springframework.security.oauth2.server.resource.authentication.JwtGrantedAuthoritiesConverter;
 import org.springframework.stereotype.Component;
 
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -71,5 +68,17 @@ public class JwtAuthConverter implements Converter<Jwt, AbstractAuthenticationTo
                 .stream()
                 .map(role -> new SimpleGrantedAuthority("ROLE_" + role))
                 .collect(Collectors.toSet());
+    }
+
+    public Customer extractCustomerInfoFromJwt(Jwt jwt) {
+        // Extracting custom claims from the JWT
+        UUID id = UUID.fromString(jwt.getClaim("sub")); // Assuming "id" claim is a UUID
+        String username = jwt.getClaim("preferred_username");
+        String firstname = jwt.getClaim("given_name");
+        String lastname = jwt.getClaim("family_name");
+        String email = jwt.getClaim("email");
+
+        // Return a Customer object with the extracted claims
+        return new Customer(id, username, firstname, lastname, email);
     }
 }
