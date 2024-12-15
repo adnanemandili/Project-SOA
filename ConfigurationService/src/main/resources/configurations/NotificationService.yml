@@ -1,0 +1,46 @@
+spring:
+  data:
+    mongodb:
+      username: adnane
+      password: adnane
+      host: localhost
+      port: 27017
+      database: notification
+      authentication-database: admin
+  kafka:
+    consumer:
+      bootstrap-servers: localhost:9092
+      group-id: paymentGroup
+      auto-offset-reset: earliest
+      value-deserializer: org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
+      key-deserializer: org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
+      properties:
+        spring.deserializer.key.delegate.class: org.apache.kafka.common.serialization.StringDeserializer
+        spring.deserializer.value.delegate.class: org.springframework.kafka.support.serializer.JsonDeserializer
+        spring.json.trusted.packages: '*'
+        spring:
+          json:
+            type:
+              mapping: paymentConfirmation:com.example.NotificationService.kafka.payment.PaymentConfirmation
+  mail:
+    host: localhost
+    port: 1025
+    username: adnane
+    password: adnane
+    properties:
+      mail:
+        smtp:
+          trust: "*"
+        auth: true
+        starttls:
+          enabled: true
+        connectiontimeout: 5000
+        timeout: 3000
+        writetimeout: 5000
+
+logging:
+  level:
+    org.springframework.kafka: DEBUG
+
+server:
+  port: 8091
