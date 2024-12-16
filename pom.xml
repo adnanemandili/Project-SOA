@@ -13,7 +13,6 @@
   <url>http://www.example.com</url>
     <modules>
         <module>NotificationService</module>
-        <module>ApiGateway</module>
         <module>DiscoveryServer</module>
         <module>ConfigurationService</module>
         <module>TicketService</module>
@@ -54,10 +53,10 @@
     </dependencyManagement>
 
     <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.boot</groupId>-->
+<!--            <artifactId>spring-boot-starter-web</artifactId>-->
+<!--        </dependency>-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-config</artifactId>
