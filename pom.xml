@@ -17,6 +17,8 @@
         <module>ConfigurationService</module>
         <module>TicketService</module>
         <module>GeolocationService</module>
+        <module>ApiGateway</module>
+        <module>SubscriptionService</module>
     </modules>
 
     <properties>

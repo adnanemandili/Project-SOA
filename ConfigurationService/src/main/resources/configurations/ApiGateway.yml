@@ -1,0 +1,17 @@
+server:
+  port: 8089
+spring:
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: TicketService
+          uri: lb:http://TICKETSERVICE
+          predicates:
+            - Path=/api/v1/tickets-service/**
+        - id: KeycloakService
+          uri: http://localhost:9090
+          predicates:
+              - Path=/realms/SOA-project/**

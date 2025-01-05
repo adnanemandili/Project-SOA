@@ -8,10 +8,11 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="DiscoveryServer" />
+        <module name="GeolocationService" />
         <module name="NotificationService" />
         <module name="ConfigurationService" />
         <module name="TicketService" />
-        <module name="GeolocationService" />
+        <module name="SubscriptionService" />
         <module name="ApiGateway" />
       </profile>
     </annotationProcessing>

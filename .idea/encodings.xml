@@ -11,6 +11,8 @@
     <file url="file://$PROJECT_DIR$/GeolocationService/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/NotificationService/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/NotificationService/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/SubscriptionService/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/SubscriptionService/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/TicketService/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/TicketService/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/UsersService/src/main/java" charset="UTF-8" />

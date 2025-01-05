@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/v1/payments")
+@RequestMapping("/api/v1/tickets-service/payments")
 //@PreAuthorize("hasRole('client_passenger')")
 @RequiredArgsConstructor
 public class PaymentController {

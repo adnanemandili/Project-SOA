@@ -15,7 +15,7 @@ import java.util.List;
 import java.util.UUID;
 
 @RestController
-@RequestMapping("/api/v1/tickets")
+@RequestMapping("/api/v1/tickets-service/tickets")
 //@PreAuthorize("hasRole('client_passenger')"
 @RequiredArgsConstructor
 public class TicketController {
