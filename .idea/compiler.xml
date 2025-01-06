@@ -8,6 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="DiscoveryServer" />
+        <module name="TrajectService" />
         <module name="GeolocationService" />
         <module name="NotificationService" />
         <module name="ConfigurationService" />
@@ -17,8 +18,12 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="untitled" target="21" />
-      <module name="UsersService" target="17" />
+      <module name="TrajetService" target="17" />
     </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="TrajetService" options="-parameters" />
+    </option>
   </component>
 </project>

@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Project-SOA.iml" filepath="$PROJECT_DIR$/.idea/Project-SOA.iml" />
-      <module fileurl="file://$PROJECT_DIR$/TrajectService.iml" filepath="$PROJECT_DIR$/TrajectService.iml" />
     </modules>
   </component>
 </project>

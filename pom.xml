@@ -19,6 +19,7 @@
         <module>GeolocationService</module>
         <module>ApiGateway</module>
         <module>SubscriptionService</module>
+        <module>TrajectService</module>
     </modules>
 
     <properties>

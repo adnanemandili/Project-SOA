@@ -1,0 +1,20 @@
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/traject
+    username: adnane
+    password: adnane
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+server:
+  port: 8100
+
+jwt:
+  auth:
+    converter:
+      resource-id: soa-project-rest-api
+      principle-attribute: preferred_username
+
