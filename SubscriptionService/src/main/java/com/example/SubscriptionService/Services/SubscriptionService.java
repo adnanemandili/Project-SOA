@@ -1,10 +1,13 @@
 package com.example.SubscriptionService.Services;
 
+import com.example.SubscriptionService.Authservice.JwtAuthConverter;
 import com.example.SubscriptionService.Entities.*;
 import com.example.SubscriptionService.Reposetories.SubscriptionRepo;
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.oauth2.jwt.Jwt;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -18,30 +21,32 @@ public class SubscriptionService {
     private final SubscriptionRepo subscriptionRepository;
     private final UserService userService;
     private final PlanService planService;
+    private final JwtAuthConverter jwtAuthConverter;
 
     @Autowired
     public SubscriptionService(SubscriptionRepo subscriptionRepository,
                                UserService userService,
-                               PlanService planService) {
+                               PlanService planService,
+                               JwtAuthConverter jwtAuthConverter) {
         this.subscriptionRepository = subscriptionRepository;
         this.userService = userService;
         this.planService = planService;
+        this.jwtAuthConverter=jwtAuthConverter;
     }
 
-    public SubscriptionModel createSubscription(UUID userId, Long planId,
-                                                String stripeSubscriptionId,
+    public SubscriptionModel createSubscription(Authentication authentication, Long planId,
                                                 BillingCycle billingCycle) {
-        UserModel user = userService.getUserById(userId);
+        Jwt jwt=(Jwt) authentication.getPrincipal();
+        UserModel user = jwtAuthConverter.extractCustomerInfoFromJwt(jwt);
         PlanModel plan = planService.getPlanById(planId);
 
-        if (subscriptionRepository.existsByUserIdAndStatus(userId, SubscriptionStatus.ACTIVE)) {
+        if (subscriptionRepository.existsByUserIdAndStatus(user.getId(), SubscriptionStatus.ACTIVE)) {
             throw new IllegalStateException("User already has an active subscription");
         }
-
         SubscriptionModel subscription = new SubscriptionModel();
         subscription.setUser(user);
         subscription.setPlan(plan);
-        subscription.setStripeSubscriptionId(stripeSubscriptionId);
+        subscription.setStripeSubscriptionId(null);
         subscription.setBillingCycle(billingCycle);
         subscription.setCurrentPeriodStart(LocalDateTime.now());
         subscription.setCurrentPeriodEnd(calculatePeriodEnd(LocalDateTime.now(), billingCycle));
@@ -68,9 +73,9 @@ public class SubscriptionService {
         return subscriptionRepository.save(subscription);
     }
 
-    public List<SubscriptionModel> getUserSubscriptions(UUID userId) {
-        return subscriptionRepository.findByUserId(userId);
-    }
+//    public List<SubscriptionModel> getUserSubscriptions(UUID userId) {
+//        return subscriptionRepository.findByUser(userId);
+//    }
 
     private LocalDateTime calculatePeriodEnd(LocalDateTime start, BillingCycle cycle) {
         return cycle == BillingCycle.MONTHLY ?

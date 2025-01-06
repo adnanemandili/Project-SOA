@@ -20,22 +20,22 @@ import java.time.LocalDateTime;
 public class SubscriptionModel {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id", nullable = false)
+    @ManyToOne
+    @JoinColumn(name = "customer_id",nullable = false)
     private UserModel user;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "plan_id",nullable = false)
     private PlanModel plan;
 
     @Enumerated(EnumType.STRING)
-    @Column(nullable = false)
+    @Column(name = "status",nullable = false)
     private SubscriptionStatus status = SubscriptionStatus.ACTIVE;
 
-    @Column(name = "stripe_subscription_id", nullable = false)
+    @Column(name = "stripe_subscription_id")
     private String stripeSubscriptionId;
 
     @Column(name = "current_period_start", nullable = false)
@@ -56,6 +56,6 @@ public class SubscriptionModel {
     private LocalDateTime createdAt;
 
     @LastModifiedDate
-    @Column(name = "updated_at", nullable = false)
+    @Column(name = "updated_at")
     private LocalDateTime updatedAt;
 }

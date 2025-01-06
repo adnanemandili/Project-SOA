@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.UUID;
 
 public interface PaymentRepo extends JpaRepository<PaymentModel,Long> {
-    List<PaymentModel> findByUserId(UUID userId);
+//    List<PaymentModel> findByUser(UUID userId);
     List<PaymentModel> findBySubscriptionId(Long subscriptionId);
     List<PaymentModel> findByStatus(PaymentStatus status);
 }

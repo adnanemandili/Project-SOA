@@ -9,7 +9,7 @@ import java.util.Optional;
 import java.util.UUID;
 
 public interface SubscriptionRepo extends JpaRepository<SubscriptionModel,Long> {
-    List<SubscriptionModel> findByUserId(UUID userId);
+//    List<SubscriptionModel> findByUser_UserId(UUID userId);
     List<SubscriptionModel> findByStatus(SubscriptionStatus status);
     Optional<SubscriptionModel> findByStripeSubscriptionId(String stripeSubscriptionId);
     boolean existsByUserIdAndStatus(UUID userId, SubscriptionStatus status);

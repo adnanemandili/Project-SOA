@@ -18,14 +18,14 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 public class PaymentModel {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id",nullable = false)
+    @ManyToOne
+    @JoinColumn(name = "customer_id",nullable = false)
     private UserModel user;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "subscription_id", nullable = false)
     private SubscriptionModel subscription;
 

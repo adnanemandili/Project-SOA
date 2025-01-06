@@ -46,9 +46,9 @@ public class PaymentService {
         return paymentRepository.save(payment);
     }
 
-    public List<PaymentModel> getUserPayments(UUID userId) {
-        return paymentRepository.findByUserId(userId);
-    }
+//    public List<PaymentModel> getUserPayments(UUID userId) {
+//        return paymentRepository.findByUser(userId);
+//    }
 
     public PaymentModel updatePaymentStatus(Long paymentId, PaymentStatus status) {
         PaymentModel payment = paymentRepository.findById(paymentId)

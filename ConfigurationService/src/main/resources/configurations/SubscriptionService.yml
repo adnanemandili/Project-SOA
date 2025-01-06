@@ -13,8 +13,18 @@ spring:
   jpa:
     hibernate:
       ddl-auto: update
+      format_sql: true
     database: postgresql
     database-platform: org.hibernate.dialect.PostgreSQLDialect
+    show-sql : true
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: DEBUG
+        type:
+          descriptor:
+            sql: TRACE
 #  kafka:
 #    producer:
 #      bootstrap-servers: localhost:9092

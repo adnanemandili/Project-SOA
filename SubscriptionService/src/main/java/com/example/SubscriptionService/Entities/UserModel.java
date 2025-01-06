@@ -18,7 +18,6 @@ import java.util.UUID;
 @AllArgsConstructor
 public class UserModel {
     @Id
-    @Column(name = "user_id")
     private UUID id;
     @NotNull(message = "username is required")
     private String username;
