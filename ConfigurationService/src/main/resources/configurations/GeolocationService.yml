@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: GeolocationService
+  datasource:
+    url: jdbc:postgresql://localhost:5432/geolocalisation
+    username: adnane
+    password: adnane
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+  web:
+    resources:
+      static-locations: classpath:/static/
+
+server:
+  port: 8102

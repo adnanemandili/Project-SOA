@@ -1,0 +1,36 @@
+/* Style général */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Conteneur de la carte */
+#map {
+    height: 100vh; /* La carte prend tout l'écran */
+    width: 100%;   /* La carte prend toute la largeur */
+}
+
+/* En-tête au-dessus de la carte */
+.header {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 1000; /* Pour que l'en-tête soit visible par-dessus la carte */
+    background: white;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header h2 {
+    margin: 0;
+    font-size: 18px;
+    color: #333;
+}
+
+.header p {
+    margin: 5px 0 0 0;
+    font-size: 14px;
+    color: #666;
+}
