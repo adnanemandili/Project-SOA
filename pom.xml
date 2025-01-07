@@ -20,6 +20,7 @@
         <module>ApiGateway</module>
         <module>SubscriptionService</module>
         <module>TrajectService</module>
+        <module>ChatbotService</module>
     </modules>
 
     <properties>

@@ -11,6 +11,22 @@ spring:
           uri: lb:http://TICKETSERVICE
           predicates:
             - Path=/api/v1/tickets-service/**
+        - id: ChatbotService
+          uri: lb:http://CHATBOTSERVICE
+          predicates:
+            - Path=/api/v1/chat-bot-service/**
+        - id: GeolocationService
+          uri: lb:http://GEOLOCATIONSERVICE
+          predicates:
+            - Path=/api/v1/geolocation-service/**
+        - id: SubscriptionService
+          uri: lb:http://SUBSCRIPTIONSERVICE
+          predicates:
+            - Path=/api/v1/subscription-service/**
+        - id: TrajectService
+          uri: lb:http://TRAJECTSERVICE
+          predicates:
+            - Path=/api/v1/traject-service/**
         - id: KeycloakService
           uri: http://localhost:9090
           predicates:
