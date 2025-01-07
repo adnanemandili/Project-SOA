@@ -1,11 +1,12 @@
-package com.example.GeolocationService;
+package com.example.chatbotservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class GeolocationServiceApplication {
+
+public class ChatbotServiceApplication {
     public static void main(String[] args) {
-        SpringApplication.run(GeolocationServiceApplication.class, args);
+        SpringApplication.run(ChatbotServiceApplication.class, args);
     }
 }

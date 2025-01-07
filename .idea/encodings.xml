@@ -3,6 +3,8 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/ApiGateway/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ApiGateway/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ChatbotService/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ChatbotService/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ConfigurationService/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ConfigurationService/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/DiscoveryServer/src/main/java" charset="UTF-8" />
@@ -17,7 +19,8 @@
     <file url="file://$PROJECT_DIR$/TicketService/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/TrajectService/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/TrajectService/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/TrajetService/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/UsersService/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/UsersService/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
   </component>
